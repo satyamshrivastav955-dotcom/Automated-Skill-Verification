@@ -54,8 +54,10 @@ def verify_code_endpoint():
         result = verify_code(github_url, claimed_skill)
         return jsonify(result)
     except Exception as e:
+        # Log the full error server-side; never expose internals to the client
+        app.logger.error(f"verify_code failed for {github_url}: {e}", exc_info=True)
         return jsonify({
-            "error": str(e),
+            "error": "Verification service error. Check server logs for details.",
             "verified": False,
             "ai_score": 0,
             "recommendation": "REJECT",
