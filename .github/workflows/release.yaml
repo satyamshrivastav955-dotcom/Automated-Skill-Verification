@@ -18,21 +18,21 @@ jobs:
   OnChain-Counter-contracts-validate:
     name: Run OnChain-Counter-contracts release
     secrets: inherit
-    uses: ./.github/workflows/OnChain-Counter-contracts-ci.yaml
+    uses: ./.github/workflows/onchain-counter-contracts-ci.yaml
 
   OnChain-Counter-contracts-release:
     name: Run OnChain-Counter-contracts release
     secrets: inherit
-    uses: ./.github/workflows/OnChain-Counter-contracts-cd.yaml
+    uses: ./.github/workflows/onchain-counter-contracts-cd.yaml
     needs: OnChain-Counter-contracts-validate
 
   OnChain-Counter-frontend-validate:
     name: Run OnChain-Counter-frontend release
     secrets: inherit
-    uses: ./.github/workflows/OnChain-Counter-frontend-ci.yaml
+    uses: ./.github/workflows/onchain-counter-frontend-ci.yaml
 
   OnChain-Counter-frontend-release:
     name: Run OnChain-Counter-frontend release
     secrets: inherit
-    uses: ./.github/workflows/OnChain-Counter-frontend-cd.yaml
+    uses: ./.github/workflows/onchain-counter-frontend-cd.yaml
     needs: OnChain-Counter-frontend-validate

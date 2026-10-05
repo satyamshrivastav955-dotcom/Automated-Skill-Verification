@@ -6,9 +6,9 @@ on: [pull_request]
 jobs:
   OnChain-Counter-contracts-ci:
     name: Run OnChain-Counter-contracts validation
-    uses: ./.github/workflows/OnChain-Counter-contracts-ci.yaml
+    uses: ./.github/workflows/onchain-counter-contracts-ci.yaml
 
   OnChain-Counter-frontend-ci:
     name: Run OnChain-Counter-frontend validation
-    uses: ./.github/workflows/OnChain-Counter-frontend-ci.yaml
+    uses: ./.github/workflows/onchain-counter-frontend-ci.yaml
 
